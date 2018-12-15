@@ -8,11 +8,12 @@ repositories {
 }
 
 dependencies {
-   compile "org.openjfx:javafx-graphics:11:win"
+    compile "org.openjfx:javafx-graphics:11:win"
+    compile "org.json:json:20171018"
 }
 
 javafx {
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
-mainClassName = 'org.openjfx.MainApp'
+mainClassName = 'com.application.MainApp'

@@ -66,7 +66,7 @@ set CMD_LINE_ARGS=%*
 set CLASSPATH=
 
 @rem Execute bluephoenix
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %BLUEPHOENIX_OPTS%  -classpath "%CLASSPATH%" org.openjfx.MainApp %CMD_LINE_ARGS%
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %BLUEPHOENIX_OPTS%  -classpath "%CLASSPATH%" com.application.MainApp %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
