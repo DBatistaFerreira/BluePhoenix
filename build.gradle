@@ -1,0 +1,18 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.5'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+   compile "org.openjfx:javafx-graphics:11:win"
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+mainClassName = 'org.openjfx.MainApp'
