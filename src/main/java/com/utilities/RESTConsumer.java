@@ -41,7 +41,7 @@ public class RESTConsumer {
             bufferedReader.close();
             return new JSONArray("[" + stringBuilder.toString() + "]"); //Needs to be enclosed by [ ] to recognize JSON
         }
-        catch(RuntimeException | IOException e){
+        catch(IOException e){
             logger.info(e.getMessage());
             return null;
         }
