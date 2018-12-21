@@ -4,19 +4,23 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 
-public class MainApp extends Application {
+
+public class ApplicationMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
 
+        Parent root = FXMLLoader.load(getClass().getResource("/views/Scene.fxml"), ResourceBundle.getBundle("bundles.lang_en", Locale.ENGLISH));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+        stage.setTitle("PlanetSide 2 - Blue Phoenix");
 
-        stage.setTitle("JavaFxTest");
+        stage.getIcons().add(new Image("/images/icon.png"));
         stage.setScene(scene);
         stage.show();
     }
