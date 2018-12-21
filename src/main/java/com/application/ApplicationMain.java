@@ -18,8 +18,8 @@ public class ApplicationMain extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("/views/Scene.fxml"), ResourceBundle.getBundle("bundles.lang_en", Locale.ENGLISH));
         Scene scene = new Scene(root);
-
         stage.setTitle("PlanetSide 2 - Blue Phoenix");
+
         stage.getIcons().add(new Image("/images/icon.png"));
         stage.setScene(scene);
         stage.show();
