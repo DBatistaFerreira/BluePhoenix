@@ -2,9 +2,9 @@
 
 <?import javafx.scene.control.*?>
 
-<MenuBar xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.MenuBarController" >
+<MenuBar xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.MenuBarController">
     <Menu text="%player">
-        <MenuItem text="%killboard" />
+        <MenuItem text="%killboard"/>
     </Menu>
     <Menu text="%outfit"/>
     <Menu text="%world"/>

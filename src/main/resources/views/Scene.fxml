@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<GridPane stylesheets="@Styles.css" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-    <rowConstraints>
-        <RowConstraints vgrow="NEVER" />
-        <RowConstraints vgrow="SOMETIMES" />
-    </rowConstraints>
+<?import javafx.scene.layout.VBox?>
+<VBox stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.SceneController">
     <children>
-        <fx:include source="MenuBar.fxml" GridPane.rowIndex="0" GridPane.hgrow="ALWAYS"/>
+        <fx:include fx:id="menuBar" source="MenuBar.fxml"/>
+        <VBox styleClass="inner-vbox">
+            <children >
+                <fx:include fx:id="playerLookup" source="PlayerLookup.fxml"/>
+                <fx:include fx:id="tabPane" source="Tabs.fxml"/>
+            </children>
+        </VBox>
     </children>
-</GridPane>
+</VBox>
