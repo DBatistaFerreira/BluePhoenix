@@ -1,6 +1,7 @@
 package com.utilities;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class RESTConsumer {
             bufferedReader.close();
             return new JSONArray("[" + stringBuilder.toString() + "]"); //Needs to be enclosed by [ ] to recognize JSON
         }
-        catch(IOException e){
+        catch(IOException | JSONException e){
             logger.info(e.getMessage());
             return null;
         }

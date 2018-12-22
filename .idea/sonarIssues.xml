@@ -3,27 +3,12 @@
   <component name="issues">
     <option name="index">
       <map>
-        <entry key="$PROJECT_DIR$/build.gradle">
+        <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/org/openjfx/FXMLController.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/org/openjfx/MainApp.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/org/openjfx/scene.fxml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/org/openjfx/styles.css">
+        <entry key="$PROJECT_DIR$/src/main/java/com/utilities/RESTConsumer.java">
           <value>
             <set />
           </value>
