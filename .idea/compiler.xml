@@ -9,5 +9,8 @@
         <module name="BluePhoenix" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BluePhoenix" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
