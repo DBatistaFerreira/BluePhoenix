@@ -1,8 +1,5 @@
 package com.utilities;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,7 +17,7 @@ public class RESTConsumer {
 
     private RESTConsumer(){}
 
-    public static JSONArray get(String uri){
+    public static String get(String uri){
         try{
             URL url = new URL(uri);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection(); //Establish Connection to API
@@ -40,9 +37,9 @@ public class RESTConsumer {
             httpURLConnection.disconnect();
             inputStreamReader.close();
             bufferedReader.close();
-            return new JSONArray("[" + stringBuilder.toString() + "]"); //Needs to be enclosed by [ ] to recognize JSON
+            return stringBuilder.toString();
         }
-        catch(IOException | JSONException e){
+        catch(IOException e){
             logger.info(e.getMessage());
             return null;
         }
