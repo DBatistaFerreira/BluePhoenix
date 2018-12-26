@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 public class CasualtyService {
 
-    private static Logger logger = Logger.getLogger(RESTConsumer.class.getName());
+    private static Logger logger = Logger.getLogger(CasualtyService.class.getName());
     private List<Casualty> casualties = new LinkedList<>();
 
     public List<Casualty> getCasualities(String characterID){

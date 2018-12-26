@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.util.logging.Logger;
 
 public class PlayerService {
-    private static Logger logger = Logger.getLogger(RESTConsumer.class.getName());
+    private static Logger logger = Logger.getLogger(PlayerService.class.getName());
     private Player player;
 
     public Player getPlayerByName(String playerName){
