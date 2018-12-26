@@ -12,7 +12,7 @@ public class PlayerService {
     private static Logger logger = Logger.getLogger(RESTConsumer.class.getName());
     private Player player;
 
-    public Player getPlayer(String playerName){
+    public Player getPlayerByName(String playerName){
         logger.info("Retrieving player for Player Name: " + playerName);
         String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?name.first_lower=" + playerName.toLowerCase());
         convertJSONResponseToPlayer(playerResponse);
