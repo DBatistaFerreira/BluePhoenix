@@ -32,10 +32,10 @@ public class Casualty {
 
     public String isHeadshot(){
         if("0".equals(isHeadshot)){
-            return "true";
+            return "false";
         }
         else {
-            return "false";
+            return "true";
         }
     }
 

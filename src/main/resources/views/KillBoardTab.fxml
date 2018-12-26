@@ -1,32 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+<GridPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.KillBoardController">
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES"/>
-        <ColumnConstraints hgrow="SOMETIMES"/>
+        <ColumnConstraints hgrow="SOMETIMES" />
+        <ColumnConstraints hgrow="SOMETIMES" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints vgrow="NEVER"/>
-        <RowConstraints vgrow="ALWAYS" fillHeight="true"/>
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints fillHeight="true" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
-        <Label text="%killboard" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label text="%killboard" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
             <columns>
-                <TableColumn text="Event Type">
+                <TableColumn text="%type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="tableType" />
+                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Temp">
+                <TableColumn text="%date">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="dateLocalTime" />
+                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="Temp">
+                <TableColumn text="%continent">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="continent" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%attacker">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="attackerCharacterName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%target">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="targetCharacterName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="%method">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="attackerWeaponName" />
+                    </cellValueFactory>
                 </TableColumn>
             </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
         </TableView>
-
     </children>
-    <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
-    </padding>
 </GridPane>

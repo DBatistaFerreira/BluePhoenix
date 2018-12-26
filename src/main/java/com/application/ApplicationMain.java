@@ -11,6 +11,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -33,8 +34,8 @@ public class ApplicationMain extends Application {
         Button closeButton = new Button("Close Application");
         closeButton.setOnAction(event -> stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST)));
         stage.getIcons().add(new Image("/images/icon.png"));
-        stage.setScene(scene);
         stage.setMaximized(true);
+        stage.setScene(scene);
         stage.show();
     }
 

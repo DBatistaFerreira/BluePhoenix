@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<VBox stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.SceneController">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane stylesheets="@Styles.css" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.SceneController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="NEVER" />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
     <children>
-        <fx:include fx:id="menuBar" source="MenuBar.fxml"/>
-        <VBox styleClass="inner-vbox">
-            <children >
-                <fx:include fx:id="playerLookup" source="PlayerLookup.fxml"/>
-                <fx:include fx:id="tabPane" source="Tabs.fxml"/>
-            </children>
-        </VBox>
+        <fx:include fx:id="menuBar" source="MenuBar.fxml" GridPane.rowIndex="0" />
+        <fx:include fx:id="playerLookup" source="PlayerLookup.fxml" GridPane.rowIndex="1"/>
+        <fx:include fx:id="tabPane" source="Tabs.fxml" GridPane.rowIndex="2" style="-fx-padding: 10 10 10 10"/>
     </children>
-</VBox>
+</GridPane>
