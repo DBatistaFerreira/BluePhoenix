@@ -6,8 +6,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
 <HBox alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.PlayerLookupController">
-    <Label text="%playerLabel" />
-    <TextField minWidth="100"/>
+    <Label text="%playerLabel" >
+        <HBox.margin>
+            <Insets left="10" />
+        </HBox.margin>
+    </Label>
+    <TextField fx:id="playerName" minWidth="100">
+        <HBox.margin>
+            <Insets left="5" />
+        </HBox.margin>
+    </TextField>
     <Button text="%search" prefWidth="100" onAction="#search">
         <HBox.margin>
             <Insets left="10" />

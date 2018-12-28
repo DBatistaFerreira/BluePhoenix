@@ -33,8 +33,8 @@ public class ApplicationMain extends Application {
         Button closeButton = new Button("Close Application");
         closeButton.setOnAction(event -> stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST)));
         stage.getIcons().add(new Image("/images/icon.png"));
-        stage.setScene(scene);
         stage.setMaximized(true);
+        stage.setScene(scene);
         stage.show();
     }
 

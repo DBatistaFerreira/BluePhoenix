@@ -20,7 +20,7 @@ public class SceneController implements Initializable {
         tabPaneController.setRootController(this);
     }
 
-    public void createKillBoard() {
-        tabPaneController.createKillBoardTab();
+    public void createKillBoard(String name) {
+        tabPaneController.createKillBoardTab(name);
     }
 }
