@@ -48,3 +48,45 @@
 .scroll-bar > .decrement-button:pressed > .decrement-arrow {
     -fx-background-color: -fx-mark-highlight-color, rgb(255, 255, 255);
 }
+
+.inner-vbox{
+    -fx-padding: 10 10 10 10;
+}
+.tab-label{
+    -fx-padding: 0 5 0 5;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+.tab-content-area {
+    -fx-border-color: -fx-dark-text-color;
+    -fx-border-width: 2;
+}
+
+.inner-vbox{
+    -fx-padding: 10 10 10 10;
+}
+.tab-label{
+    -fx-padding: 0 5 0 5;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+.tab-content-area {
+    -fx-border-color: -fx-dark-text-color;
+    -fx-border-width: 2;
+}
+.tab-pane > .tab-content-area > * {
+    -fx-padding: 10 10 10 10;
+}
+
+.killboard-title-label{
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 24;
+}
+.killboard-info-label{
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 50;
+}
