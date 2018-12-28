@@ -56,7 +56,7 @@ public class PlayerService {
         return null;
     }
 
-    private String getStringListOfIDs(List<String> listOfIDs){
+    public static String getStringListOfIDs(List<String> listOfIDs){
         StringBuilder IDs = new StringBuilder();
         IDs.append(listOfIDs.get(0));
         IDs.append(",");
