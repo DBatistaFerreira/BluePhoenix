@@ -1,6 +1,7 @@
 package com.objects;
 
 public class CasualtyDisplay {
+    private String rowNumber;
     private String targetCharacterName;
     private String attackerCharacterName;
     private String isHeadshot;
@@ -12,7 +13,8 @@ public class CasualtyDisplay {
     public CasualtyDisplay() {
     }
 
-    public CasualtyDisplay(String targetCharacterName, String attackerCharacterName, String isHeadshot, String attackerWeaponName, String dateLocalTime, String continent, String tableType) {
+    public CasualtyDisplay(String rowNumber, String targetCharacterName, String attackerCharacterName, String isHeadshot, String attackerWeaponName, String dateLocalTime, String continent, String tableType) {
+        this.rowNumber = rowNumber;
         this.targetCharacterName = targetCharacterName;
         this.attackerCharacterName = attackerCharacterName;
         this.isHeadshot = isHeadshot;
@@ -20,6 +22,14 @@ public class CasualtyDisplay {
         this.dateLocalTime = dateLocalTime;
         this.continent = continent;
         this.tableType = tableType;
+    }
+
+    public String getRowNumber() {
+        return rowNumber;
+    }
+
+    public void setRowNumber(String rowNumber) {
+        this.rowNumber = rowNumber;
     }
 
     public String getTargetCharacterName() {

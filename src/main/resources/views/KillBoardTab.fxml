@@ -32,6 +32,11 @@
         </HBox>
         <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
             <columns>
+                <TableColumn text="#" prefWidth="10">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="rowNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
                 <TableColumn text="%type">
                     <cellValueFactory>
                         <PropertyValueFactory property="tableType"/>

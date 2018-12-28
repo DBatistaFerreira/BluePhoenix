@@ -49,11 +49,11 @@ public class KillBoardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         bundle = resources;
 
-        ((TableColumn) tableView.getColumns().get(3)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("attackerCharacterName"));
-        ((TableColumn) tableView.getColumns().get(3)).setCellFactory(getValue());
-
-        ((TableColumn) tableView.getColumns().get(4)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("targetCharacterName"));
+        ((TableColumn) tableView.getColumns().get(4)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("attackerCharacterName"));
         ((TableColumn) tableView.getColumns().get(4)).setCellFactory(getValue());
+
+        ((TableColumn) tableView.getColumns().get(5)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("targetCharacterName"));
+        ((TableColumn) tableView.getColumns().get(5)).setCellFactory(getValue());
 
         players = new HashMap<String, Player>();
         items = new HashMap<String, Item>();
@@ -72,11 +72,11 @@ public class KillBoardController implements Initializable {
                             Player player = players.get(item);
                             if (!(player == null)) {
                                 if (player.getFactionID().equals("1")) {
-                                    this.setTextFill(Color.RED);
+                                    this.setTextFill(Color.PURPLE);
                                 } else if (player.getFactionID().equals("2")) {
                                     this.setTextFill(Color.DODGERBLUE);
                                 } else {
-                                    this.setTextFill(Color.PURPLE);
+                                    this.setTextFill(Color.RED);
                                 }
                                 setText(player.getCharacterName().getName());
                             } else {
@@ -100,6 +100,7 @@ public class KillBoardController implements Initializable {
         Platform.runLater(() -> battleRank.setText(player.getPrestigeLevel() + "~" + player.getBattleRank().getBattleRankValue()));
         ArrayList<String> playerIDs = new ArrayList<>();
         playerIDs.add(player.getCharacterID());
+        ArrayList<String> weaponIds = new ArrayList<>();
         for (Casualty casualty : casualtyList) {
             if (!playerIDs.contains(casualty.getCharacterID())) {
                 playerIDs.add(casualty.getCharacterID());
@@ -107,21 +108,25 @@ public class KillBoardController implements Initializable {
             if (!playerIDs.contains(casualty.getAttackerCharacterID())) {
                 playerIDs.add(casualty.getAttackerCharacterID());
             }
+            if (!casualty.getAttackerWeaponID().equals("0")) {
+                weaponIds.add(casualty.getAttackerWeaponID());
+            }
         }
         players = playerService.getPlayersByIds(playerIDs);
+        items = itemService.getItemsByIDs(weaponIds);
         for (Casualty casualty : casualtyList) {
-            try {
-                if (casualty.getAttackerVehicleID().equals("0") && items.get(casualty.getAttackerWeaponID()) == null) {
-                    //items.put(casualty.getAttackerWeaponID(), itemService.getItemById(casualty.getAttackerWeaponID()));
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             CasualtyDisplay casualtyDisplay = new CasualtyDisplay();
-
+            casualtyDisplay.setRowNumber(String.valueOf(casualtyDisplayList.size()+1));
+            if(casualty.getTableType().equals("kills") && casualty.getAttackerCharacterID().equals(casualty.getCharacterID())){
+                continue;
+            }
             casualtyDisplay.setAttackerCharacterName(casualty.getAttackerCharacterID());
             casualtyDisplay.setTargetCharacterName(casualty.getCharacterID());
-            if (items.get(casualty.getAttackerWeaponID()) == null) {
+            if (casualty.getAttackerWeaponID().equals("0") && casualty.getAttackerVehicleID().equals("0") && casualty.getAttackerCharacterID().equals(casualty.getCharacterID())) {
+                casualtyDisplay.setAttackerWeaponName("Suicide");
+            } else if (casualty.getAttackerWeaponID().equals("0") && casualty.getAttackerVehicleID().equals("0")) {
+                casualtyDisplay.setAttackerWeaponName("Unknown");
+            } else if (casualty.getAttackerWeaponID().equals("0")) {
                 casualtyDisplay.setAttackerWeaponName(casualty.getAttackerVehicleID());
             } else {
                 casualtyDisplay.setAttackerWeaponName(items.get(casualty.getAttackerWeaponID()).getItemName().getEnglish());
