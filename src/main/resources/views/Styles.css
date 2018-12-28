@@ -79,3 +79,14 @@
 .tab-pane > .tab-content-area > * {
     -fx-padding: 10 10 10 10;
 }
+
+.killboard-title-label{
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 24;
+}
+.killboard-info-label{
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-font-size: 50;
+}
