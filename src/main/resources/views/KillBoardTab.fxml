@@ -32,22 +32,22 @@
         </HBox>
         <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
             <columns>
-                <TableColumn text="#" prefWidth="10">
+                <TableColumn text="#" maxWidth="600">
                     <cellValueFactory>
                         <PropertyValueFactory property="rowNumber"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%type">
+                <TableColumn text="%type" maxWidth="1000">
                     <cellValueFactory>
                         <PropertyValueFactory property="tableType"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%date">
+                <TableColumn text="%date" maxWidth="2200">
                     <cellValueFactory>
                         <PropertyValueFactory property="dateLocalTime"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%continent">
+                <TableColumn text="%continent" maxWidth="1200">
                     <cellValueFactory>
                         <PropertyValueFactory property="continent"/>
                     </cellValueFactory>
