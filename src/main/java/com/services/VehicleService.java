@@ -14,15 +14,13 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class VehicleService {
-
-    private static final String SERVICE_KEY = "s:troopers";
     private static Logger logger = Logger.getLogger(VehicleService.class.getName());
     private Vehicle vehicle;
     private HashMap<String, Vehicle> vehicles = new HashMap<>();
 
     public Vehicle getVehicleById(String ID){
         logger.info("Retrieving vehicle for vehicle ID: " + ID);
-        String vehicleResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY + "/get/ps2:v2/vehicle?vehicle_id=" + ID);
+        String vehicleResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/vehicle?vehicle_id=" + ID);
         convertJSONResponseToVehicle(vehicleResponse);
         return vehicle;
     }
@@ -31,7 +29,7 @@ public class VehicleService {
         String commaList = PlayerService.getStringListOfIDs(listOfIDs);
         logger.info("Retrieving vehicles for vehicle IDs: " + commaList);
         try {
-            String vehicleResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY + "/get/ps2:v2/vehicle?vehicle_id=" + commaList);
+            String vehicleResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/vehicle?vehicle_id=" + commaList);
             JSONObject jsonObject = new JSONObject(vehicleResponse);
             JSONArray jsonArray = new JSONArray(jsonObject.getString("vehicle_list"));
             Gson gson = new Gson();

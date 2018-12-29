@@ -20,8 +20,6 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class ItemService {
-
-    private static final String SERVICE_KEY = "s:troopers";
     private static Logger logger = Logger.getLogger(ItemService.class.getName());
     private Item item;
     private HashMap<String, Item> items = new HashMap<>();
@@ -29,7 +27,7 @@ public class ItemService {
     public Item getItemById(String itemID){
         logger.info("Retrieving item for Item ID: " + itemID);
         try {
-        String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY +"/get/ps2:v2/item?item_id=" + itemID);
+        String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/item?item_id=" + itemID);
         JSONObject jsonObject = new JSONObject(itemResponse);
         String itemJSON = jsonObject.getString("item_list");
         itemJSON = itemJSON.replace("[", "");
@@ -49,7 +47,7 @@ public class ItemService {
         String commaList = PlayerService.getStringListOfIDs(listOfIDs);
         logger.info("Retrieving items for item IDs: " + commaList);
         try {
-            String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY + "/get/ps2:v2/item?item_id=" + commaList);
+            String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/item?item_id=" + commaList);
             JSONObject jsonObject = new JSONObject(itemResponse);
             JSONArray jsonArray = new JSONArray(jsonObject.getString("item_list"));
             Gson gson = new Gson();
