@@ -90,3 +90,6 @@
     -fx-text-alignment: CENTER;
     -fx-font-size: 50;
 }
+.killboard-info{
+    -fx-background-color: -fx-control-inner-background;
+}
