@@ -68,19 +68,4 @@ public class ItemService {
         }
         return null;
     }
-
-    public Image getItemImage(String imageID){
-        try {
-            logger.info("Retrieving item image for Image ID: " + imageID);
-            URL url = new URL("https://census.daybreakgames.com/files/ps2/images/static/" + imageID + ".png");
-            BufferedImage image = ImageIO.read(url);
-            Image itemImage = SwingFXUtils.toFXImage(image, null);
-            logger.info("Retrieving item for Image ID: " + imageID);
-            return itemImage;
-        } catch (IOException e) {
-            logger.info("Error in retrieving item for Image ID: " + imageID);
-            logger.info(e.getMessage());
-        }
-        return null;
-    }
 }
