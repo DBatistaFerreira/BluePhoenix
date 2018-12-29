@@ -15,13 +15,15 @@ import java.util.logging.Logger;
 
 public class CasualtyService {
 
+    private static final String SERVICE_KEY = "s:troopers";
     private static Logger logger = Logger.getLogger(CasualtyService.class.getName());
     private List<Casualty> casualties = new LinkedList<>();
 
+
     public List<Casualty> getCasualities(String characterID){
         logger.info("Retrieving all casualities for chracterID: " + characterID);
-        String characterEventJson = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/characters_event/?character_id=" + characterID + "&type=KILL,DEATH&c:limit=1000");
-        try {
+        String characterEventJson = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY + "/get/ps2:v2/characters_event/?character_id=" + characterID + "&type=KILL,DEATH&c:limit=1000");
+            try {
             Map<String, Object> characterEventListMap = new Gson().fromJson(characterEventJson, new TypeToken<HashMap<String, Object>>() {}.getType());
             String casualtiesString = characterEventListMap.get("characters_event_list").toString();
             JSONArray jsonArray = new JSONArray(casualtiesString);
