@@ -20,14 +20,14 @@ public class PlayerService {
 
     public Player getPlayerByName(String playerName){
         logger.info("Retrieving player for Player Name: " + playerName);
-        String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?name.first_lower=" + playerName.toLowerCase());
+        String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?name.first_lower=" + playerName.toLowerCase() + "&c:resolve=outfit_member_extended");
         convertJSONResponseToPlayer(playerResponse);
         return player;
     }
 
     public Player getPlayerById(String ID){
         logger.info("Retrieving player for playerID: " + ID);
-        String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?character_id=" + ID);
+        String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?character_id=" + ID + "&c:resolve=outfit_member_extended");
         convertJSONResponseToPlayer(playerResponse);
         return player;
     }
@@ -36,7 +36,7 @@ public class PlayerService {
         String commaList = getStringListOfIDs(listOfIDs);
         logger.info("Retrieving players for playerIDs: " + commaList);
         try {
-            String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?character_id=" + commaList);
+            String playerResponse = RESTConsumer.get("http://census.daybreakgames.com/s:troopers/get/ps2:v2/character/?character_id=" + commaList + "&c:resolve=outfit_member_extended");
             JSONObject jsonObject = new JSONObject(playerResponse);
             JSONArray jsonArray = new JSONArray(jsonObject.getString("character_list"));
             Gson gson = new Gson();
