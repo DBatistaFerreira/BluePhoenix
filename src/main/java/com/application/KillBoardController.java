@@ -184,7 +184,7 @@ public class KillBoardController implements Initializable {
                                 } else {
                                     this.setTextFill(Color.RED);
                                 }
-                                setText(player.getCharacterName().getName());
+                                setText((player.getOutfitMember() == null ? "" : "["+player.getOutfitMember().getAlias()+"] ") + player.getCharacterName().getName());
                             } else {
                                 setText(bundle.getString("enemy"));
                             }
