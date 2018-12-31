@@ -26,6 +26,8 @@ public class Player {
     private DailyRibbon dailyRibbon;
     @SerializedName("prestige_level")
     private String prestigeLevel;
+    @SerializedName("outfit_member")
+    private OutfitMember outfitMember;
 
     public String getCharacterID() {
         return characterID;
@@ -69,6 +71,68 @@ public class Player {
 
     public String getPrestigeLevel() {
         return prestigeLevel;
+    }
+
+    public OutfitMember getOutfitMember() {
+        return outfitMember;
+    }
+
+    public class OutfitMember{
+
+        @SerializedName("member_since")
+        private String memberSince;
+        @SerializedName("member_rank")
+        private String memberRank;
+        @SerializedName("member_rank_ordinal")
+        private String memberRankOrdinal;
+        @SerializedName("outfit_id")
+        private String outfitID;
+        @SerializedName("name")
+        private String name;
+        @SerializedName("alias")
+        private String alias;
+        @SerializedName("time_created")
+        private String timeCreated;
+        @SerializedName("leader_character_id")
+        private String leaderCharacterId;
+        @SerializedName("member_count")
+        private String memberCount;
+
+        public String getMemberSince() {
+            return memberSince;
+        }
+
+        public String getMemberRank() {
+            return memberRank;
+        }
+
+        public String getMemberRankOrdinal() {
+            return memberRankOrdinal;
+        }
+
+        public String getOutfitID() {
+            return outfitID;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getAlias() {
+            return alias;
+        }
+
+        public String getTimeCreated() {
+            return timeCreated;
+        }
+
+        public String getLeaderCharacterId() {
+            return leaderCharacterId;
+        }
+
+        public String getMemberCount() {
+            return memberCount;
+        }
     }
 
     public class BattleRank{
