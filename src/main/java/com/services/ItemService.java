@@ -20,6 +20,8 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 public class ItemService {
+
+    private static final String SERVICE_KEY = "s:troopers";
     private static Logger logger = Logger.getLogger(ItemService.class.getName());
     private Item item;
     private HashMap<String, Item> items = new HashMap<>();
@@ -27,7 +29,7 @@ public class ItemService {
     public Item getItemById(String itemID){
         logger.info("Retrieving item for Item ID: " + itemID);
         try {
-        String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/item?item_id=" + itemID);
+        String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY +"/get/ps2:v2/item?item_id=" + itemID);
         JSONObject jsonObject = new JSONObject(itemResponse);
         String itemJSON = jsonObject.getString("item_list");
         itemJSON = itemJSON.replace("[", "");
@@ -47,7 +49,7 @@ public class ItemService {
         String commaList = PlayerService.getStringListOfIDs(listOfIDs);
         logger.info("Retrieving items for item IDs: " + commaList);
         try {
-            String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/get/ps2:v2/item?item_id=" + commaList);
+            String itemResponse = RESTConsumer.get("http://census.daybreakgames.com/" + SERVICE_KEY + "/get/ps2:v2/item?item_id=" + commaList);
             JSONObject jsonObject = new JSONObject(itemResponse);
             JSONArray jsonArray = new JSONArray(jsonObject.getString("item_list"));
             Gson gson = new Gson();
@@ -62,21 +64,6 @@ public class ItemService {
         }
         catch(JSONException e){
             logger.info("Error in retrieving items");
-            logger.info(e.getMessage());
-        }
-        return null;
-    }
-
-    public Image getItemImage(String imageID){
-        try {
-            logger.info("Retrieving item image for Image ID: " + imageID);
-            URL url = new URL("https://census.daybreakgames.com/files/ps2/images/static/" + imageID + ".png");
-            BufferedImage image = ImageIO.read(url);
-            Image itemImage = SwingFXUtils.toFXImage(image, null);
-            logger.info("Retrieving item for Image ID: " + imageID);
-            return itemImage;
-        } catch (IOException e) {
-            logger.info("Error in retrieving item for Image ID: " + imageID);
             logger.info(e.getMessage());
         }
         return null;

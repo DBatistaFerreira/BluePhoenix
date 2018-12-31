@@ -4,7 +4,6 @@ public class CasualtyDisplay {
     private String rowNumber;
     private String targetCharacterName;
     private String attackerCharacterName;
-    private String isHeadshot;
     private String attackerWeaponName;
     private String dateLocalTime;
     private String continent;
@@ -13,11 +12,10 @@ public class CasualtyDisplay {
     public CasualtyDisplay() {
     }
 
-    public CasualtyDisplay(String rowNumber, String targetCharacterName, String attackerCharacterName, String isHeadshot, String attackerWeaponName, String dateLocalTime, String continent, String tableType) {
+    public CasualtyDisplay(String rowNumber, String targetCharacterName, String attackerCharacterName, String attackerWeaponName, String dateLocalTime, String continent, String tableType) {
         this.rowNumber = rowNumber;
         this.targetCharacterName = targetCharacterName;
         this.attackerCharacterName = attackerCharacterName;
-        this.isHeadshot = isHeadshot;
         this.attackerWeaponName = attackerWeaponName;
         this.dateLocalTime = dateLocalTime;
         this.continent = continent;
@@ -38,10 +36,6 @@ public class CasualtyDisplay {
 
     public String getAttackerCharacterName() {
         return attackerCharacterName;
-    }
-
-    public String getIsHeadshot() {
-        return isHeadshot;
     }
 
     public String getAttackerWeaponName() {
@@ -66,10 +60,6 @@ public class CasualtyDisplay {
 
     public void setAttackerCharacterName(String attackerCharacterName) {
         this.attackerCharacterName = attackerCharacterName;
-    }
-
-    public void setIsHeadshot(String isHeadshot) {
-        this.isHeadshot = isHeadshot;
     }
 
     public void setAttackerWeaponName(String attackerWeaponName) {
