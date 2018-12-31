@@ -15,6 +15,7 @@
           fx:controller="com.application.KillBoardController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES"/>
+        <ColumnConstraints hgrow="NEVER" maxWidth="10" minWidth="10"/>
         <ColumnConstraints hgrow="SOMETIMES"/>
     </columnConstraints>
     <rowConstraints>
@@ -32,22 +33,22 @@
         </HBox>
         <TableView fx:id="tableView" GridPane.columnIndex="0" GridPane.rowIndex="1">
             <columns>
-                <TableColumn text="#" maxWidth="600">
+                <TableColumn text="#" maxWidth="35" minWidth="35">
                     <cellValueFactory>
                         <PropertyValueFactory property="rowNumber"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%type" maxWidth="1000">
+                <TableColumn text="%type" maxWidth="50" minWidth="50">
                     <cellValueFactory>
                         <PropertyValueFactory property="tableType"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%date" maxWidth="2200">
+                <TableColumn text="%date" maxWidth="120" minWidth="120" style="-fx-alignment: CENTER;">
                     <cellValueFactory>
                         <PropertyValueFactory property="dateLocalTime"/>
                     </cellValueFactory>
                 </TableColumn>
-                <TableColumn text="%continent" maxWidth="1200">
+                <TableColumn text="%continent" maxWidth="70" minWidth="70" style="-fx-alignment: CENTER;">
                     <cellValueFactory>
                         <PropertyValueFactory property="continent"/>
                     </cellValueFactory>
@@ -72,30 +73,30 @@
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
             </columnResizePolicy>
         </TableView>
-        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.rowSpan="2">
+        <GridPane GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="killboard-info">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" halignment="CENTER"/>
                 <ColumnConstraints hgrow="SOMETIMES" halignment="CENTER"/>
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints vgrow="NEVER" valignment="CENTER"/>
+                <RowConstraints vgrow="SOMETIMES" valignment="CENTER" />
+                <RowConstraints vgrow="NEVER" valignment="CENTER"/>
                 <RowConstraints vgrow="SOMETIMES" valignment="CENTER"/>
                 <RowConstraints vgrow="NEVER" valignment="CENTER"/>
                 <RowConstraints vgrow="SOMETIMES" valignment="CENTER"/>
-                <RowConstraints vgrow="NEVER"/>
-                <RowConstraints vgrow="SOMETIMES" valignment="CENTER"/>
             </rowConstraints>
             <children>
-                <Label styleClass="killboard-title-label" text="%battleRank" GridPane.rowIndex="0"/>
-                <Label styleClass="killboard-title-label" text="%trueKD" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label styleClass="killboard-title-label" text="%battleRank" GridPane.rowIndex="0" underline="true"/>
+                <Label styleClass="killboard-title-label" text="%trueKD" GridPane.columnIndex="1" GridPane.rowIndex="0" underline="true"/>
                 <Label fx:id="battleRank" GridPane.rowIndex="1" styleClass="killboard-info-label"/>
                 <Label fx:id="trueKD" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="killboard-info-label"/>
-                <Label styleClass="killboard-title-label" text="%killLabel" GridPane.rowIndex="2"/>
-                <Label styleClass="killboard-title-label" text="%deathLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label styleClass="killboard-title-label" text="%killLabel" GridPane.rowIndex="2" underline="true"/>
+                <Label styleClass="killboard-title-label" text="%deathLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" underline="true"/>
                 <Label fx:id="kills" GridPane.rowIndex="3" styleClass="killboard-info-label"/>
                 <Label fx:id="deaths" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="killboard-info-label"/>
-                <Label styleClass="killboard-title-label" text="%headshotRate" GridPane.rowIndex="4"/>
-                <Label styleClass="killboard-title-label" text="%total" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label styleClass="killboard-title-label" text="%headshotRate" GridPane.rowIndex="4" underline="true"/>
+                <Label styleClass="killboard-title-label" text="%total" GridPane.columnIndex="1" GridPane.rowIndex="4" underline="true"/>
                 <Label fx:id="headshotRate" GridPane.rowIndex="5" styleClass="killboard-info-label"/>
                 <Label fx:id="total" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="killboard-info-label"/>
             </children>
