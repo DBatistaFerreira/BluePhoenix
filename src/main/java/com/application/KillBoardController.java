@@ -5,7 +5,7 @@ import com.services.CasualtyService;
 import com.services.ItemService;
 import com.services.PlayerService;
 import com.services.VehicleService;
-import com.utilities.Continents;
+import com.utilities.Continent;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -118,7 +118,7 @@ public class KillBoardController implements Initializable {
             Date date = new Date(Long.parseLong(casualty.getTimestamp()) * 1000);
             casualtyDisplay.setDateLocalTime(format.format(date));
             //Column 4 - CONTINENT THAT THE EVENT OCCURRED ON
-            casualtyDisplay.setContinent(bundle.getString(Continents.getContinentFromValue(Integer.parseInt(casualty.getZoneID()))));
+            casualtyDisplay.setContinent(bundle.getString(Continent.getContinentFromValue(Integer.parseInt(casualty.getZoneID()))));
             //Column 5 - ATTACKER
             casualtyDisplay.setAttackerCharacterName(casualty.getAttackerCharacterID());
             //Column 6 - TARGET
