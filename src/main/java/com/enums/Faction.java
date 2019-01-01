@@ -1,4 +1,4 @@
-package com.utilities;
+package com.enums;
 
 public enum Faction {
     NANITE_SYSTEMS(0),

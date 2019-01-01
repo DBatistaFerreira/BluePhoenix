@@ -1,11 +1,11 @@
-package com.application;
+package com.application.tabs;
 
 import com.objects.*;
 import com.services.CasualtyService;
 import com.services.ItemService;
 import com.services.PlayerService;
 import com.services.VehicleService;
-import com.utilities.Continent;
+import com.enums.Continent;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -184,8 +184,15 @@ public class KillBoardController implements Initializable {
                                 } else {
                                     this.setTextFill(Color.RED);
                                 }
-                                setText((player.getOutfitMember() == null ? "" : "["+player.getOutfitMember().getAlias()+"] ") + player.getCharacterName().getName());
+                                String prefix = "";
+                                if(!(player.getOutfitMember() == null)){
+                                    if(!player.getOutfitMember().getAlias().isEmpty()){
+                                        prefix = "[" + player.getOutfitMember().getAlias() + "] ";
+                                    }
+                                }
+                                setText(prefix + player.getCharacterName().getName());
                             } else {
+                                this.setTextFill(Color.GRAY);
                                 setText(bundle.getString("enemy"));
                             }
                         }

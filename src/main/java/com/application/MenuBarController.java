@@ -16,4 +16,16 @@ public class MenuBarController implements Initializable {
     public void setRootController(SceneController sceneController) {
         this.sceneController = sceneController;
     }
+
+    @FXML
+    public void killboardVisible(){
+        sceneController.reset();
+        sceneController.setKillboardVisible(true);
+    }
+
+    @FXML
+    public void outfitGenealStatsVisible(){
+        sceneController.reset();
+        sceneController.setOutfitGeneralStatsVisible(true);
+    }
 }

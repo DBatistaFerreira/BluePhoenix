@@ -15,7 +15,8 @@
     </rowConstraints>
     <children>
         <fx:include fx:id="menuBar" source="MenuBar.fxml" GridPane.rowIndex="0" />
-        <fx:include fx:id="playerLookup" source="PlayerLookup.fxml" GridPane.rowIndex="1"/>
+        <fx:include fx:id="playerLookup" source="PlayerLookup.fxml" GridPane.rowIndex="1" visible="false"/>
+        <fx:include fx:id="outfitLookup" source="OutfitLookup.fxml" GridPane.rowIndex="1" visible="false"/>
         <fx:include fx:id="tabPane" source="Tabs.fxml" GridPane.rowIndex="2" style="-fx-padding: 10 10 10 10"/>
     </children>
 </GridPane>

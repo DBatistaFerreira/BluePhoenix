@@ -1,5 +1,6 @@
 package com.application;
 
+import com.application.tabs.KillBoardController;
 import com.objects.Player;
 import com.services.PlayerService;
 import javafx.fxml.FXML;
@@ -38,12 +39,7 @@ public class TabPaneController implements Initializable {
             this.tab.getTabs().add(tab);
             KillBoardController killBoard = (KillBoardController) fxmlLoader.getController();
 
-            Runnable task = new Runnable() {
-                @Override
-                public void run() {
-                    killBoard.buildTableView(player);
-                }
-            };
+            Runnable task = () -> killBoard.buildTableView(player);
             // Run the task in a background thread
             Thread backgroundThread = new Thread(task);
             // Terminate the running thread if the application exists

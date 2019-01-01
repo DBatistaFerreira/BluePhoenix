@@ -1,4 +1,4 @@
-package com.utilities;
+package com.enums;
 
 public enum World {
     CONNERY(1),

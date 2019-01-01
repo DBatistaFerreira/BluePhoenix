@@ -4,9 +4,14 @@
 
 <MenuBar xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.MenuBarController">
     <Menu text="%player">
-        <MenuItem text="%killboard"/>
+        <MenuItem text="%generalStats"/>
+        <MenuItem text="%killboard" onAction="#killboardVisible"/>
+        <MenuItem text="%weaponStats"/>
+        <MenuItem text="%friendList"/>
     </Menu>
-    <Menu text="%outfit"/>
+    <Menu text="%outfit">
+        <MenuItem text="%generalInfo" onAction="#outfitGenealStatsVisible"/>
+    </Menu>
     <Menu text="%world"/>
     <Menu text="%alerts"/>
 </MenuBar>
