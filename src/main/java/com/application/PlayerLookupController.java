@@ -3,6 +3,7 @@ package com.application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +16,11 @@ public class PlayerLookupController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        playerName.setOnKeyPressed(key -> {
+            if(key.getCode().equals(KeyCode.ENTER)){
+                search();
+            }
+        });
     }
 
     public void setRootController(SceneController sceneController) {
@@ -23,7 +28,10 @@ public class PlayerLookupController implements Initializable {
     }
 
     @FXML
-    private void search(){
-        sceneController.createKillBoard(playerName.getText());
+    private void search() {
+        if (!playerName.getText().isEmpty()) {
+                sceneController.createKillBoard(playerName.getText());
+        }
+        playerName.setText(null);
     }
 }
