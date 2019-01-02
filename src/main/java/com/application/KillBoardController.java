@@ -140,7 +140,6 @@ public class KillBoardController implements Initializable {
                     headShots++;
                 }
             }
-
             casualtyDisplayList.add(casualtyDisplay);
             Platform.runLater(() -> {
                 //Add item to table view in a GUI thread
@@ -194,7 +193,6 @@ public class KillBoardController implements Initializable {
             }
         };
     }
-
 
     /////////////////////
     /// INNER CLASSES ///
