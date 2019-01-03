@@ -202,7 +202,6 @@ public class KillBoardController implements Initializable {
         };
     }
 
-
     /////////////////////
     /// INNER CLASSES ///
     /////////////////////
