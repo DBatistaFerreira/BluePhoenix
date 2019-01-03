@@ -31,7 +31,7 @@ public class OutfitLookupController implements Initializable {
     @FXML
     private void search() {
         if (!outfitTag.getText().isEmpty()) {
-
+            sceneController.createOutfitGeneralStats(outfitTag.getText());
         }
         outfitTag.setText(null);
     }

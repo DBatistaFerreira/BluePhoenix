@@ -9,7 +9,9 @@
         <MenuItem text="%weaponStats"/>
         <MenuItem text="%friendList"/>
     </Menu>
-    <Menu text="%outfit"/>
+    <Menu text="%outfit">
+        <MenuItem text="%outfitGeneralStats" onAction="#outfitGenealStatsVisible"/>
+    </Menu>
     <Menu text="%world"/>
     <Menu text="%alerts"/>
 </MenuBar>

@@ -1,6 +1,8 @@
 package com.application;
 
+import com.application.lookups.OutfitLookupController;
 import com.application.lookups.PlayerLookupController;
+import com.application.tabs.OutfitGeneralStatsController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
@@ -16,6 +18,8 @@ public class SceneController implements Initializable {
     @FXML
     private TabPaneController tabPaneController;
     @FXML
+    private OutfitLookupController outfitLookupController;
+    @FXML
     private VBox playerLookup;
     @FXML
     private VBox outfitLookup;
@@ -24,10 +28,17 @@ public class SceneController implements Initializable {
         menuBarController.setRootController(this);
         playerLookupController.setRootController(this);
         tabPaneController.setRootController(this);
+        outfitLookupController.setRootController(this);
+
+
     }
 
     public void createKillBoard(String name) {
         tabPaneController.createKillBoardTab(name);
+    }
+
+    public void createOutfitGeneralStats(String tag) {
+        tabPaneController.createOutfitGeneralStats(tag);
     }
 
     public void setKillboardVisible(boolean visible) {
