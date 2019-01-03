@@ -2,6 +2,8 @@ package com.objects;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Player {
 
     @SerializedName("character_id")
@@ -28,6 +30,8 @@ public class Player {
     private String prestigeLevel;
     @SerializedName("outfit_member")
     private OutfitMember outfitMember;
+    @SerializedName("stats")
+    private Stats statList;
 
     public String getCharacterID() {
         return characterID;
@@ -75,6 +79,34 @@ public class Player {
 
     public OutfitMember getOutfitMember() {
         return outfitMember;
+    }
+
+    public Stats getStatList() {
+        return statList;
+    }
+
+    public class Stats{
+        @SerializedName("stat_history")
+        private List<Stat> statHistory;
+
+        public List<Stat> getStatHistory() {
+            return statHistory;
+        }
+
+        public class Stat{
+            @SerializedName("stat_name")
+            private String statName;
+            @SerializedName("all_time")
+            private String value;
+
+            public String getStatName() {
+                return statName;
+            }
+
+            public String getValue() {
+                return value;
+            }
+        }
     }
 
     public class OutfitMember{
