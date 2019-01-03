@@ -92,7 +92,7 @@ public class PlayerService {
             playerJSON = playerJSON.replace("]", "");
             Gson gson = new Gson();
             player = gson.fromJson(playerJSON, Player.class);
-            logger.info("Successfully retrieved player: " + player.getCharacterName().getName());
+            logger.info("Successfully retrieved player");
         }
         catch(JSONException e){
             logger.info("Error in retrieving player");
