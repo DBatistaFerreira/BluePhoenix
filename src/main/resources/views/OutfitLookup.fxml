@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.VBox?>
-<VBox alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.lookups.PlayerLookupController">
-    <Label text="%playerKillBoard" style="-fx-font-size: 32">
+<VBox alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.lookups.OutfitLookupController">
+    <Label text="%outfitGeneralStats" style="-fx-font-size: 32">
         <VBox.margin>
             <Insets left="10"/>
         </VBox.margin>
     </Label>
     <HBox alignment="CENTER_LEFT">
-        <Label text="%playerLabel">
+        <Label text="%outfitTagLabel">
             <HBox.margin>
                 <Insets left="10"/>
             </HBox.margin>
         </Label>
-        <TextField fx:id="playerName" minWidth="100">
+        <TextField fx:id="outfitTag" minWidth="100">
             <HBox.margin>
                 <Insets left="5"/>
             </HBox.margin>

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <GridPane stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="com.application.KillBoardController">
+          fx:controller="com.application.tabs.KillBoardController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES"/>
         <ColumnConstraints hgrow="NEVER" maxWidth="10" minWidth="10"/>
