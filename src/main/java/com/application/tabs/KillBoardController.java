@@ -1,5 +1,7 @@
 package com.application.tabs;
 
+import com.application.TabPaneController;
+import com.enums.Faction;
 import com.objects.*;
 import com.services.CasualtyService;
 import com.services.ItemService;
@@ -50,14 +52,12 @@ public class KillBoardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         bundle = resources;
         //Sorts the values based on there integer values instead of ASCII
-        ((TableColumn) tableView.getColumns().get(0)).setComparator(new compare());
+        ((TableColumn) tableView.getColumns().get(0)).setComparator(new integerCompare());
 
         //Changes the cell factories to color text based on what the cell contains
-        ((TableColumn) tableView.getColumns().get(4)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("attackerCharacterName"));
-        ((TableColumn) tableView.getColumns().get(4)).setCellFactory(getColorValue());
+        ((TableColumn) tableView.getColumns().get(4)).setCellFactory(new getColorValue());
 
-        ((TableColumn) tableView.getColumns().get(5)).setCellValueFactory(new PropertyValueFactory<CasualtyDisplay, String>("targetCharacterName"));
-        ((TableColumn) tableView.getColumns().get(5)).setCellFactory(getColorValue());
+        ((TableColumn) tableView.getColumns().get(5)).setCellFactory(new getColorValue());
     }
 
     public void buildTableView(Player player) {
@@ -159,54 +159,47 @@ public class KillBoardController implements Initializable {
             progressBar.setProgress(1.0);
             tableView.refresh();
             progressBar.setVisible(false);
+            //TabPaneController.autoResizeColumns(tableView);
         });
-    }
-
-    /////////////////
-    /// CALLBACKS ///
-    /////////////////
-
-    private Callback<TableColumn, TableCell> getColorValue() {
-        return new Callback<TableColumn, TableCell>() {
-            public TableCell call(TableColumn param) {
-                return new TableCell<CasualtyDisplay, String>() {
-
-                    @Override
-                    public void updateItem(String item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (!isEmpty()) {
-                            Player player = players.get(item);
-                            if (!(player == null)) {
-                                if (player.getFactionID().equals("1")) {
-                                    this.setTextFill(Color.PURPLE);
-                                } else if (player.getFactionID().equals("2")) {
-                                    this.setTextFill(Color.DODGERBLUE);
-                                } else {
-                                    this.setTextFill(Color.RED);
-                                }
-                                String prefix = "";
-                                if(!(player.getOutfitMember() == null)){
-                                    if(!player.getOutfitMember().getAlias().isEmpty()){
-                                        prefix = "[" + player.getOutfitMember().getAlias() + "] ";
-                                    }
-                                }
-                                setText(prefix + player.getCharacterName().getName());
-                            } else {
-                                this.setTextFill(Color.GRAY);
-                                setText(bundle.getString("enemy"));
-                            }
-                        }
-                    }
-                };
-            }
-        };
     }
 
     /////////////////////
     /// INNER CLASSES ///
     /////////////////////
 
-    private class compare implements Comparator<String> {
+    private class getColorValue<S, T> implements Callback<TableColumn<S, T>, TableCell<S, T>> {
+
+        public getColorValue() {
+        }
+
+        @Override
+        public TableCell<S, T> call(TableColumn<S, T> p) {
+            TableCell<S, T> cell = new TableCell<S, T>() {
+                @Override
+                protected void updateItem(Object item, boolean empty) {
+                    super.updateItem((T)item, empty);
+                    if (!isEmpty()) {
+                        Player player = players.get(item);
+                        if (!(player == null)) {
+                            this.setTextFill(Faction.getFactionFromValue(Integer.parseInt(player.getFactionID())).getColor());
+                            String prefix = "";
+                            if(!(player.getOutfitMember() == null)){
+                                if(!player.getOutfitMember().getAlias().isEmpty()){
+                                    prefix = "[" + player.getOutfitMember().getAlias() + "] ";
+                                }
+                            }
+                            setText(prefix + player.getCharacterName().getName());
+                        } else {
+                            this.setTextFill(Color.GRAY);
+                            setText(bundle.getString("enemy"));
+                        }
+                    }
+                }
+            };
+            return cell;
+        }
+    }
+    private class integerCompare implements Comparator<String> {
 
         @Override
         public int compare(String o1, String o2) {

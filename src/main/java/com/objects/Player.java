@@ -32,6 +32,10 @@ public class Player {
     private OutfitMember outfitMember;
     @SerializedName("stats")
     private Stats statList;
+    @SerializedName("online_status")
+    private String onlineStatus;
+
+    public String getOnlineStatus() { return onlineStatus; }
 
     public String getCharacterID() {
         return characterID;
@@ -85,7 +89,7 @@ public class Player {
         return statList;
     }
 
-    public class Stats{
+    public class Stats {
         @SerializedName("stat_history")
         private List<Stat> statHistory;
 
@@ -93,7 +97,7 @@ public class Player {
             return statHistory;
         }
 
-        public class Stat{
+        public class Stat {
             @SerializedName("stat_name")
             private String statName;
             @SerializedName("all_time")
@@ -109,7 +113,7 @@ public class Player {
         }
     }
 
-    public class OutfitMember{
+    public class OutfitMember {
 
         @SerializedName("member_since")
         private String memberSince;
@@ -167,7 +171,7 @@ public class Player {
         }
     }
 
-    public class BattleRank{
+    public class BattleRank {
         @SerializedName("percent_to_next")
         private String percentToNext;
         @SerializedName("value")
@@ -182,7 +186,7 @@ public class Player {
         }
     }
 
-    public class DailyRibbon{
+    public class DailyRibbon {
         @SerializedName("count")
         private String count;
         @SerializedName("time")
@@ -197,7 +201,7 @@ public class Player {
         }
     }
 
-    public class Certs{
+    public class Certs {
         @SerializedName("earned_points")
         private String earnedPoints;
         @SerializedName("gifted_points")
@@ -230,7 +234,7 @@ public class Player {
         }
     }
 
-    public class Times{
+    public class Times {
         @SerializedName("creation")
         private String creationDate;
         @SerializedName("last_save")
@@ -263,7 +267,7 @@ public class Player {
         }
     }
 
-    public class Name{
+    public class Name {
         @SerializedName("first")
         private String name;
         @SerializedName("first_lower")
