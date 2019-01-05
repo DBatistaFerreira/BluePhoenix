@@ -52,7 +52,7 @@ public class OutfitGeneralStatsController implements Initializable {
         ((TableColumn) tableView.getColumns().get(2)).setComparator(new rankCompare());
         //Sorts the values based on the prestige level and battle rank level
         ((TableColumn) tableView.getColumns().get(3)).setComparator(new battleRankCompare());
-        
+
         //Changes the cell factories to contain a graphic for online status
         ((TableColumn) tableView.getColumns().get(0)).setCellFactory(new onlineStatus());
 

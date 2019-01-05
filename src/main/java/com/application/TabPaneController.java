@@ -106,7 +106,6 @@ public class TabPaneController implements Initializable {
                 width += column.getWidth();
                 continue;
             }
-            System.out.println(max);
             for (int i = 0; i < table.getItems().size(); i++) {
                 //cell must not be empty
                 if (column.getCellData(i) != null) {
