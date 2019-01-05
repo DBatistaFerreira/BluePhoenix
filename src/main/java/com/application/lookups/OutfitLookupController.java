@@ -1,6 +1,7 @@
 package com.application.lookups;
 
 import com.application.SceneController;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -18,7 +19,7 @@ public class OutfitLookupController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         outfitTag.setOnKeyPressed(key -> {
-            if(key.getCode().equals(KeyCode.ENTER)){
+            if (key.getCode().equals(KeyCode.ENTER)) {
                 search();
             }
         });
@@ -30,9 +31,17 @@ public class OutfitLookupController implements Initializable {
 
     @FXML
     private void search() {
-        if (!outfitTag.getText().isEmpty()) {
-            sceneController.createOutfitGeneralStats(outfitTag.getText());
-        }
-        outfitTag.setText(null);
+        new Thread(() -> {
+            String tag = outfitTag.getText();
+            if (!tag.isEmpty()) {
+                Platform.runLater(() -> outfitTag.setText("Searching..."));
+                if (!sceneController.createOutfitGeneralStats(tag)) {
+                    outfitTag.setText("Could Not Find Outfit");
+                }else{
+                    outfitTag.setText(null);
+                }
+            }
+        }).start();
+
     }
 }

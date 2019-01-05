@@ -37,8 +37,11 @@ public class SceneController implements Initializable {
         tabPaneController.createKillBoardTab(name);
     }
 
-    public void createOutfitGeneralStats(String tag) {
-        tabPaneController.createOutfitGeneralStats(tag);
+    public boolean createOutfitGeneralStats(String tag) {
+        if(!tabPaneController.createOutfitGeneralStats(tag)){
+           return false;
+        }
+        return true;
     }
 
     public void setKillboardVisible(boolean visible) {
