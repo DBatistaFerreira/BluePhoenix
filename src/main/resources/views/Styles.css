@@ -93,3 +93,11 @@
 .killboard-info{
     -fx-background-color: -fx-control-inner-background;
 }
+.bold-text{
+    -fx-font-weight: bold;
+}
+
+.outfit-header-text{
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}

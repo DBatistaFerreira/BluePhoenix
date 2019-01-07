@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.application.tabs.OutfitGeneralStatsController">
     <columnConstraints>
-        <ColumnConstraints hgrow="NEVER"/>
-        <ColumnConstraints hgrow="NEVER" maxWidth="10" minWidth="10"/>
+        <ColumnConstraints hgrow="SOMETIMES"/>
         <ColumnConstraints hgrow="SOMETIMES"/>
     </columnConstraints>
     <rowConstraints>
@@ -22,15 +14,101 @@
         <RowConstraints fillHeight="true" vgrow="ALWAYS"/>
     </rowConstraints>
     <children>
-        <HBox GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <Label text="%outfitGeneralStats"/>
+        <VBox GridPane.columnIndex="0" GridPane.rowSpan="2" GridPane.rowIndex="0" style="-fx-font-size: 16" alignment="TOP_CENTER">
+                <Label fx:id="outfitName" style="-fx-font-size: 30"/>
+                <Label text="%outfitInformation" style="-fx-font-size: 24"/>
+            <HBox alignment="CENTER">
+                <Label text="%tagLabel"/>
+                <Label fx:id="tag" styleClass="bold-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%serverLabel"/>
+                <Label fx:id="server" styleClass="bold-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%factionLabel"/>
+                <Label fx:id="faction" styleClass="bold-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%leaderNameLabel"/>
+                <Label fx:id="leaderName" styleClass="bold-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%memberCountLabel"/>
+                <Label fx:id="memberCount" styleClass="bold-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%membersCurrentlyOnlineLabel"/>
+                <Label fx:id="membersCurrentlyOnline" styleClass="bold-text"/>
+            </HBox>
+            <GridPane style="-fx-font-size: 16" alignment="TOP_CENTER">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER"/>
+                    <ColumnConstraints hgrow="NEVER" halignment="RIGHT"/>
+                    <ColumnConstraints hgrow="NEVER" halignment="RIGHT"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                    <RowConstraints vgrow="NEVER"/>
+                </rowConstraints>
+                <children>
+                    <Label text="%stat" GridPane.rowIndex="0" GridPane.halignment="CENTER" styleClass="outfit-header-text"/>
+                    <Label text="%totalScore" GridPane.rowIndex="1"/>
+                    <Label text="%totalBr" GridPane.rowIndex="2"/>
+                    <Label text="%averageBr" GridPane.rowIndex="3"/>
+                    <Label text="%averageSpm" GridPane.rowIndex="4"/>
+                    <Label text="%averageKpm" GridPane.rowIndex="5"/>
+                    <Label text="%averageKd" GridPane.rowIndex="6"/>
+                    <Label text="%totalKills" GridPane.rowIndex="7"/>
+                    <Label text="%totalDeaths" GridPane.rowIndex="8"/>
+                    <Label text="%timePlayed" GridPane.rowIndex="9"/>
+                    <Label text="%averageTimePlayed" GridPane.rowIndex="10"/>
+
+                    <Label text="%total" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" styleClass="outfit-header-text"/>
+                    <Label fx:id="totalScore" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label fx:id="totalBr" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label fx:id="averageBr" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    <Label fx:id="averageSpm" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    <Label fx:id="averageKpm" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                    <Label fx:id="averageKd" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                    <Label fx:id="totalKills" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                    <Label fx:id="totalDeaths" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                    <Label fx:id="totalTimePlayed" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+                    <Label fx:id="averageTimePlayed" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+                    <Label text="%active" GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" styleClass="outfit-header-text"/>
+                    <Label fx:id="activeTotalScore" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeTotalBr" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeAverageBr" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeAverageSpm" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeAverageKpm" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeAverageKd" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeTotalKills" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeTotalDeaths" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeTotalTimePlayed" GridPane.rowIndex="9" GridPane.columnIndex="2"/>
+                    <Label fx:id="activeAverageTimePlayed" GridPane.rowIndex="10" GridPane.columnIndex="2"/>
+                </children>
+            </GridPane>
+        </VBox>
+
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+            <Label text="%outfitmembers"/>
             <ProgressBar fx:id="progressBar" prefWidth="400.0" visible="false">
                 <HBox.margin>
                     <Insets left="10.0"/>
                 </HBox.margin>
             </ProgressBar>
         </HBox>
-        <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER">
             <TableView fx:id="tableView">
                 <columns>
                     <TableColumn text="" maxWidth="30" minWidth="30" style="-fx-alignment: CENTER;">
