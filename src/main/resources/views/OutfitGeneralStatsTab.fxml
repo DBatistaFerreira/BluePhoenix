@@ -11,7 +11,7 @@
     </columnConstraints>
     <rowConstraints>
         <RowConstraints vgrow="NEVER"/>
-        <RowConstraints fillHeight="true" vgrow="ALWAYS"/>
+        <RowConstraints vgrow="ALWAYS"/>
     </rowConstraints>
     <children>
         <VBox GridPane.columnIndex="0" GridPane.rowSpan="2" GridPane.rowIndex="0" style="-fx-font-size: 16" alignment="TOP_CENTER">
@@ -111,7 +111,7 @@
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER">
             <TableView fx:id="tableView">
                 <columns>
-                    <TableColumn text="" maxWidth="30" minWidth="30" style="-fx-alignment: CENTER;">
+                    <TableColumn maxWidth="30" minWidth="30" style="-fx-alignment: CENTER;">
                         <cellValueFactory>
                             <PropertyValueFactory property="onlineStatus"/>
                         </cellValueFactory>

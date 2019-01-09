@@ -20,7 +20,7 @@
     </columnConstraints>
     <rowConstraints>
         <RowConstraints vgrow="NEVER"/>
-        <RowConstraints fillHeight="true" vgrow="ALWAYS"/>
+        <RowConstraints vgrow="ALWAYS"/>
     </rowConstraints>
     <children>
         <HBox GridPane.columnIndex="0" GridPane.rowIndex="0">

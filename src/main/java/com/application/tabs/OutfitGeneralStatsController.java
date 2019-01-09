@@ -150,14 +150,19 @@ public class OutfitGeneralStatsController implements Initializable {
                     indexOfDeaths = 0,
                     indexOfScore = 0;
             for (int i = list.size() - 1; i >= 0; i--) {
-                if (list.get(i).getStatName().equals("time")) {
-                    indexOfPlayTime = i;
-                } else if (list.get(i).getStatName().equals("kills")) {
-                    indexOfKills = i;
-                } else if (list.get(i).getStatName().equals("deaths")) {
-                    indexOfDeaths = i;
-                } else if (list.get(i).getStatName().equals("score")) {
-                    indexOfScore = i;
+                switch (list.get(i).getStatName()) {
+                    case "time":
+                        indexOfPlayTime = i;
+                        break;
+                    case "kills":
+                        indexOfKills = i;
+                        break;
+                    case "deaths":
+                        indexOfDeaths = i;
+                        break;
+                    case "score":
+                        indexOfScore = i;
+                        break;
                 }
             }
             long playTime = Long.parseLong(list.get(indexOfPlayTime).getValue());
@@ -284,7 +289,6 @@ public class OutfitGeneralStatsController implements Initializable {
         }
         if (seconds > 0 && totalAdded < 3) {
             stringBuilder.append(seconds > 1 ? " " + seconds + " Seconds" : " 1 Second");
-            totalAdded++;
         }
         return stringBuilder.toString();
     }
@@ -302,7 +306,7 @@ public class OutfitGeneralStatsController implements Initializable {
 
         @Override
         public TableCell<S, T> call(TableColumn<S, T> p) {
-            TableCell<S, T> cell = new TableCell<S, T>() {
+            return new TableCell<S, T>() {
                 @Override
                 protected void updateItem(Object item, boolean empty) {
                     super.updateItem((T) item, empty);
@@ -318,7 +322,6 @@ public class OutfitGeneralStatsController implements Initializable {
                     }
                 }
             };
-            return cell;
         }
     }
 
@@ -332,7 +335,7 @@ public class OutfitGeneralStatsController implements Initializable {
 
         @Override
         public TableCell<S, T> call(TableColumn<S, T> p) {
-            TableCell<S, T> cell = new TableCell<S, T>() {
+            return new TableCell<S, T>() {
                 @Override
                 protected void updateItem(Object item, boolean empty) {
                     super.updateItem((T) item, empty);
@@ -342,7 +345,6 @@ public class OutfitGeneralStatsController implements Initializable {
                     }
                 }
             };
-            return cell;
         }
     }
 
