@@ -21,6 +21,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -65,7 +66,11 @@ public class OutfitGeneralStatsController implements Initializable {
             activeTotalKills,
             activeTotalDeaths,
             activeTotalTimePlayed,
-            activeAverageTimePlayed;
+            activeAverageTimePlayed,
+            lastDay,
+            lastWeek,
+            lastMonth,
+            inactive;
 
     private ResourceBundle bundle;
     private Map<String, Integer> rank;
@@ -76,7 +81,10 @@ public class OutfitGeneralStatsController implements Initializable {
             averageKdValue = 0,
             activeAverageSpmValue = 0,
             activeAverageKpmValue = 0,
-            activeAverageKdValue = 0;
+            activeAverageKdValue = 0,
+            totalLastDay = 0,
+            totalLastWeek = 0,
+            totalInactive = 0;
 
     private int numberOfOnlinePlayers = 0,
             totalBrValue = 0,
@@ -87,6 +95,7 @@ public class OutfitGeneralStatsController implements Initializable {
             activeTotalDeathsValue = 0,
             amountOfActiveMembers = 0;
 
+
     private long totalTimePlayedValue = 0,
             averageTimePlayedValue = 0,
             activeTotalScoreValue = 0,
@@ -94,17 +103,15 @@ public class OutfitGeneralStatsController implements Initializable {
             activeTotalTimePlayedValue = 0,
             activeAverageTimePlayedValue = 0;
 
-    private NumberFormat numberFormat;
-    private DecimalFormat decimalFormat;
+    private static NumberFormat numberFormat = NumberFormat.getNumberInstance();
+    private static DecimalFormat decimalFormat = new DecimalFormat("0.##");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         bundle = resources;
         rank = new HashMap<>();
         timePlayed = new HashMap<>();
-        numberFormat = NumberFormat.getNumberInstance();
         numberFormat.setGroupingUsed(true);
-        decimalFormat = new DecimalFormat("0.##");
         decimalFormat.setGroupingUsed(true);
 
         //Sorts the values based on there integer values instead of ASCII
@@ -194,19 +201,7 @@ public class OutfitGeneralStatsController implements Initializable {
             //Column 6 - LAST LOGIN
             Date lastLogin = new Date(Long.parseLong(member.getPlayer().getPlayerTimes().getLastSaveDate()) * 1000);
             outfitDisplay.setLastLogin(format.format(lastLogin));
-            long diffInMillies = new Date().getTime() - lastLogin.getTime();
-            TimeUnit.SECONDS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            if (TimeUnit.SECONDS.convert(diffInMillies, TimeUnit.MILLISECONDS) < MONTH_IN_SECONDS) {
-                activeTotalBrValue += Integer.parseInt(member.getPlayer().getBattleRank().getBattleRankValue());
-                activeTotalScoreValue += Long.parseLong(list.get(indexOfScore).getValue());
-                activeAverageKdValue += Double.parseDouble(list.get(indexOfKills).getValue()) / (Double.parseDouble(list.get(indexOfDeaths).getValue()) == 0 ? 1 : Double.parseDouble(list.get(indexOfDeaths).getValue()));
-                activeAverageSpmValue += Double.parseDouble(list.get(indexOfScore).getValue()) / (((double) playTime) / MIN_IN_SECONDS);
-                activeTotalKillsValue += Integer.parseInt(list.get(indexOfKills).getValue());
-                activeTotalDeathsValue += Integer.parseInt(list.get(indexOfDeaths).getValue());
-                activeAverageKpmValue += (Double.parseDouble(list.get(indexOfKills).getValue())) / (((double) playTime) / MIN_IN_SECONDS);
-                activeTotalTimePlayedValue += playTime;
-                amountOfActiveMembers++;
-            }
+            outfitDisplay.setLastLogin(toStringTimeElapsed((Instant.now().toEpochMilli() / 1000 - Long.parseLong(member.getPlayer().getPlayerTimes().getLastSaveDate()))));
             //Column 7 - PLAY TIME
             String playtimeFormated = toStringTimeElapsed(playTime);
             outfitDisplay.setPlayTime(playtimeFormated);
@@ -218,6 +213,27 @@ public class OutfitGeneralStatsController implements Initializable {
             //Column 10 - KILLS PER MINUTE
             outfitDisplay.setKillsPerMinute(decimalFormat.format(((Double.parseDouble(list.get(indexOfKills).getValue())) / (((double) playTime) / MIN_IN_SECONDS))));
             outfitDisplayList.add(outfitDisplay);
+            //Member Activity
+            long diffInMillies = new Date().getTime() - lastLogin.getTime();
+            long diffInSeconds = TimeUnit.SECONDS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+
+            if (diffInSeconds < DAY_IN_SECONDS) {
+                totalLastDay++;
+            }
+            if (diffInSeconds < WEEK_IN_SECONDS) {
+                totalLastWeek++;
+            }
+            if (diffInSeconds < MONTH_IN_SECONDS) {
+                activeTotalBrValue += Integer.parseInt(member.getPlayer().getBattleRank().getBattleRankValue());
+                activeTotalScoreValue += Long.parseLong(list.get(indexOfScore).getValue());
+                activeAverageKdValue += Double.parseDouble(list.get(indexOfKills).getValue()) / (Double.parseDouble(list.get(indexOfDeaths).getValue()) == 0 ? 1 : Double.parseDouble(list.get(indexOfDeaths).getValue()));
+                activeAverageSpmValue += Double.parseDouble(list.get(indexOfScore).getValue()) / (((double) playTime) / MIN_IN_SECONDS);
+                activeTotalKillsValue += Integer.parseInt(list.get(indexOfKills).getValue());
+                activeTotalDeathsValue += Integer.parseInt(list.get(indexOfDeaths).getValue());
+                activeAverageKpmValue += (Double.parseDouble(list.get(indexOfKills).getValue())) / (((double) playTime) / MIN_IN_SECONDS);
+                activeTotalTimePlayedValue += playTime;
+                amountOfActiveMembers++;
+            }
         }
         Platform.runLater(() -> {
             totalScore.setText(numberFormat.format(totalScoreValue));
@@ -244,12 +260,21 @@ public class OutfitGeneralStatsController implements Initializable {
             activeAverageTimePlayedValue = activeTotalTimePlayedValue / amountOfActiveMembers;
             activeAverageTimePlayed.setText(toStringTimeElapsed(activeAverageTimePlayedValue));
 
+            lastDay.setText(formatMemberActivityLabel(totalLastDay, outfitDisplayList.size()));
+            lastWeek.setText(formatMemberActivityLabel(totalLastWeek, outfitDisplayList.size()));
+            lastMonth.setText(formatMemberActivityLabel(amountOfActiveMembers, outfitDisplayList.size()));
+            inactive.setText(formatMemberActivityLabel(totalInactive, outfitDisplayList.size()));
+
             membersCurrentlyOnline.setText(numberFormat.format(numberOfOnlinePlayers));
             tableView.getItems().addAll(outfitDisplayList);
             progressBar.setVisible(false);
             progressBar.setManaged(false);
             TabPaneController.autoResizeColumns(tableView);
         });
+    }
+
+    private static String formatMemberActivityLabel(double totalActive, double total) {
+        return decimalFormat.format((totalActive / total) * 100) + " % (" + (int) totalActive + ")";
     }
 
     private static String toStringTimeElapsed(long timeElapsedInSeconds) {

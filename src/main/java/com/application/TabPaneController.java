@@ -68,7 +68,6 @@ public class TabPaneController implements Initializable {
     }
 
     public boolean createOutfitGeneralStats(String tag) {
-        //TODO This method needs to be completed once we have a Outfit Object
         boolean foundOutfit = false;
         try {
             OutfitService outfitService = new OutfitService();

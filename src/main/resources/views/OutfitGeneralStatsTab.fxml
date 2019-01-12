@@ -15,8 +15,8 @@
     </rowConstraints>
     <children>
         <VBox GridPane.columnIndex="0" GridPane.rowSpan="2" GridPane.rowIndex="0" style="-fx-font-size: 16" alignment="TOP_CENTER">
-                <Label fx:id="outfitName" style="-fx-font-size: 30"/>
-                <Label text="%outfitInformation" style="-fx-font-size: 24"/>
+            <Label fx:id="outfitName" styleClass="bold-text" style="-fx-font-size: 30"/>
+            <Label text="%outfitInformation" styleClass="bold-text" style="-fx-font-size: 24"/>
             <HBox alignment="CENTER">
                 <Label text="%tagLabel"/>
                 <Label fx:id="tag" styleClass="bold-text"/>
@@ -41,7 +41,10 @@
                 <Label text="%membersCurrentlyOnlineLabel"/>
                 <Label fx:id="membersCurrentlyOnline" styleClass="bold-text"/>
             </HBox>
-            <GridPane style="-fx-font-size: 16" alignment="TOP_CENTER">
+            <GridPane style="-fx-font-size: 16;-fx-background-color: -fx-control-inner-background;" alignment="TOP_CENTER">
+                <padding>
+                    <Insets top="25" bottom="25"/>
+                </padding>
                 <columnConstraints>
                     <ColumnConstraints hgrow="NEVER"/>
                     <ColumnConstraints hgrow="NEVER" halignment="RIGHT"/>
@@ -98,10 +101,29 @@
                     <Label fx:id="activeAverageTimePlayed" GridPane.rowIndex="10" GridPane.columnIndex="2"/>
                 </children>
             </GridPane>
+            <HBox alignment="CENTER">
+                <Label text="%memberActivity" styleClass="outfit-header-text"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%24Hours"/>
+                <Label fx:id="lastDay"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%7Days"/>
+                <Label fx:id="lastWeek"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%30Days"/>
+                <Label fx:id="lastMonth"/>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label text="%inactive"/>
+                <Label fx:id="inactive"/>
+            </HBox>
         </VBox>
 
         <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
-            <Label text="%outfitmembers"/>
+            <Label text="%outfitmembers" styleClass="outfit-header-text"/>
             <ProgressBar fx:id="progressBar" prefWidth="400.0" visible="false">
                 <HBox.margin>
                     <Insets left="10.0"/>
