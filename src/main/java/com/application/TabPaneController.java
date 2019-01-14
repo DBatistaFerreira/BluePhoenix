@@ -53,7 +53,7 @@ public class TabPaneController implements Initializable {
             Parent tabContent = fxmlLoader.load();
             Tab tab = new Tab(bundle.getString("killboard") + " - " + player.getCharacterName().getName(), tabContent);
             setNewTab(tab);
-            KillBoardController killBoard = (KillBoardController) fxmlLoader.getController();
+            KillBoardController killBoard = fxmlLoader.getController();
 
             Runnable task = () -> killBoard.buildTableView(player);
             // Run the task in a background thread
@@ -68,7 +68,6 @@ public class TabPaneController implements Initializable {
     }
 
     public boolean createOutfitGeneralStats(String tag) {
-        //TODO This method needs to be completed once we have a Outfit Object
         boolean foundOutfit = false;
         try {
             OutfitService outfitService = new OutfitService();
@@ -79,7 +78,7 @@ public class TabPaneController implements Initializable {
                 Parent tabContent = fxmlLoader.load();
                 Tab tab = new Tab(bundle.getString("outfitGeneralStats") + " - " + outfit.getAlias(), tabContent);
                 Platform.runLater(() -> setNewTab(tab));
-                OutfitGeneralStatsController outfitTabController = (OutfitGeneralStatsController) fxmlLoader.getController();
+                OutfitGeneralStatsController outfitTabController = fxmlLoader.getController();
                 Runnable task = () -> outfitTabController.buildTableView(outfit);
                 // Run the task in a background thread
                 Thread backgroundThread = new Thread(task);

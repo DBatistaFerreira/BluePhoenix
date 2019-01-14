@@ -41,8 +41,6 @@ public class KillBoardController implements Initializable {
     private ResourceBundle bundle;
 
     private Map<String, Player> players;
-    private Map<String, Item> items;
-    private Map<String, Vehicle> vehicles;
     private int headShots;
     private int numberOfKills;
 
@@ -97,10 +95,10 @@ public class KillBoardController implements Initializable {
         players = playerService.getPlayersByIds(playerIDs);
         Platform.runLater(() -> progressBar.setProgress(0.4));
 
-        items = itemService.getItemsByIDs(weaponIds);
+        Map<String, Item> items = itemService.getItemsByIDs(weaponIds);
         Platform.runLater(() -> progressBar.setProgress(0.6));
 
-        vehicles = vehicleService.getVehiclesByIds(vehicleIds);
+        Map<String, Vehicle> vehicles = vehicleService.getVehiclesByIds(vehicleIds);
         Platform.runLater(() -> progressBar.setProgress(0.9));
 
         LinkedList<CasualtyDisplay> casualtyDisplayList = new LinkedList<>();
@@ -174,7 +172,7 @@ public class KillBoardController implements Initializable {
 
         @Override
         public TableCell<S, T> call(TableColumn<S, T> p) {
-            TableCell<S, T> cell = new TableCell<S, T>() {
+            return new TableCell<S, T>() {
                 @Override
                 protected void updateItem(Object item, boolean empty) {
                     super.updateItem((T)item, empty);
@@ -196,7 +194,6 @@ public class KillBoardController implements Initializable {
                     }
                 }
             };
-            return cell;
         }
     }
     private class integerCompare implements Comparator<String> {

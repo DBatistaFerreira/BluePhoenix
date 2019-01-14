@@ -26,7 +26,7 @@ public class ApplicationMain extends Application {
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/views/Scene.fxml"), ResourceBundle.getBundle("bundles.lang_en", Locale.ENGLISH));
-        Scene scene = new Scene(root,900,700, Color.TRANSPARENT);
+        Scene scene = new Scene(root,1365,900, Color.TRANSPARENT);
         stage.setTitle("PlanetSide 2 - Blue Phoenix");
         stage.setOnCloseRequest(confirmCloseEventHandler);
 
