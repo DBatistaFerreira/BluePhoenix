@@ -250,14 +250,22 @@ public class OutfitGeneralStatsController implements Initializable {
 
             activeTotalScore.setText(numberFormat.format(activeTotalScoreValue));
             activeTotalBr.setText(numberFormat.format(activeTotalBrValue));
-            activeAverageBr.setText(numberFormat.format(activeTotalBrValue / amountOfActiveMembers));
-            activeAverageSpm.setText(decimalFormat.format(activeAverageSpmValue / amountOfActiveMembers));
-            activeAverageKpm.setText(decimalFormat.format(activeAverageKpmValue / amountOfActiveMembers));
-            activeAverageKd.setText(decimalFormat.format(activeAverageKdValue / amountOfActiveMembers));
+            if (amountOfActiveMembers == 0) {
+                activeAverageBr.setText("0");
+                activeAverageSpm.setText("0");
+                activeAverageKpm.setText("0");
+                activeAverageKd.setText("0");
+                activeAverageTimePlayedValue = 0;
+            } else {
+                activeAverageBr.setText(numberFormat.format(activeTotalBrValue / amountOfActiveMembers));
+                activeAverageSpm.setText(decimalFormat.format(activeAverageSpmValue / amountOfActiveMembers));
+                activeAverageKpm.setText(decimalFormat.format(activeAverageKpmValue / amountOfActiveMembers));
+                activeAverageKd.setText(decimalFormat.format(activeAverageKdValue / amountOfActiveMembers));
+                activeAverageTimePlayedValue = activeTotalTimePlayedValue / amountOfActiveMembers;
+            }
             activeTotalKills.setText(numberFormat.format(activeTotalKillsValue));
             activeTotalTimePlayed.setText(toStringTimeElapsed(activeTotalTimePlayedValue));
             activeTotalDeaths.setText(numberFormat.format(activeTotalDeathsValue));
-            activeAverageTimePlayedValue = activeTotalTimePlayedValue / amountOfActiveMembers;
             activeAverageTimePlayed.setText(toStringTimeElapsed(activeAverageTimePlayedValue));
 
             lastDay.setText(formatMemberActivityLabel(totalLastDay, outfitDisplayList.size()));

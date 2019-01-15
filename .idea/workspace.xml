@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="667a7dab-cb36-416c-827c-2c9f89d6ff7e" name="Default Changelist" comment="BLPHNX5 - Fixed Merged Conflicts">
+    <list default="true" id="667a7dab-cb36-416c-827c-2c9f89d6ff7e" name="Default Changelist" comment="BLPHNX29 - Added Member Activity&#10;&#10;-Fixed Last Login to show time elapsed since last login&#10;-Added member activity for 1 day, 1 week, and a month&#10;-edited layout to make the tab look better&#10;-Changed the default minimized size of the stage&#10;-minor refactoring to remove redundant code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BluePhoenix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BluePhoenix.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/application/tabs/OutfitGeneralStatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/application/tabs/OutfitGeneralStatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/bundles/lang_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bundles/lang_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/views/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/views/Styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/application/ApplicationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/application/ApplicationMain.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="C:\Users\bedar\IdeaProjects\BluePhoenix\.idea\shelf/" />
@@ -21,115 +15,30 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="BluePhoenix" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/application/tabs/OutfitGeneralStatsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="384" column="27" lean-forward="true" selection-start-line="384" selection-start-column="27" selection-end-line="384" selection-end-column="27" />
-              <folding>
-                <element signature="e#16131#17145#0" expanded="true" />
-                <element signature="e#17144#17145#0" expanded="true" />
-                <element signature="e#17480#17845#0" expanded="true" />
-                <element signature="e#17844#17845#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/services/ImageService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/objects/Casualty.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/application/ApplicationMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/services/CasualtyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/Scene.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/lang_en.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="89" column="22" lean-forward="true" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
-              <folding>
-                <element signature="e#8904#8905#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+            <state relative-caret-position="395">
+              <caret line="258" column="20" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -162,13 +71,14 @@
       <find>averageKdValue</find>
       <find>averageBrValue</find>
       <find>activeAverageTimePlayedValue</find>
+      <find>fastTime</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="BLPHNX29-Add-Outfit-Information" />
       </map>
     </option>
   </component>
@@ -181,7 +91,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/views/PlayerLookup.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/views/Tabs.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/services/CasualtyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/application/ApplicationMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/objects/CasualtyDisplay.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/services/PlayerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/application/PlayerLookupController.java" />
@@ -196,12 +105,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/objects/OutfitDisplay.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/application/demo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/application/lookups/OutfitLookupController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/views/Styles.css" />
         <option value="$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/bundles/lang_en.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/application/ApplicationMain.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/application/tabs/OutfitGeneralStatsController.java" />
       </list>
     </option>
@@ -230,10 +140,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1461" />
-    <option name="y" value="355" />
-    <option name="width" value="1347" />
-    <option name="height" value="724" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -260,26 +170,83 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="tabs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="bundles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BluePhoenix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BluePhoenix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547061158297" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547061162692" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
@@ -360,7 +327,17 @@
       <workItem from="1546755993863" duration="1251000" />
       <workItem from="1546793908158" duration="3615000" />
       <workItem from="1546820146279" duration="7650000" />
-      <workItem from="1547058448875" duration="1243000" />
+      <workItem from="1547058448875" duration="1282000" />
+      <workItem from="1547136872865" duration="5000" />
+      <workItem from="1547136903379" duration="30000" />
+      <workItem from="1547229615324" duration="573000" />
+      <workItem from="1547230485566" duration="9000" />
+      <workItem from="1547230591785" duration="16000" />
+      <workItem from="1547238696275" duration="840000" />
+      <workItem from="1547250167424" duration="46000" />
+      <workItem from="1547254822053" duration="3199000" />
+      <workItem from="1547573831294" duration="13000" />
+      <workItem from="1547573889711" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="BLPHNX11 - TableView Updates in Real Time&#10;&#10;-Added the ability to see character names&#10;-Added local time when events happen&#10;-Added what continent kills occured&#10;-Added if an event type is a kill or death">
       <created>1545865645144</created>
@@ -439,13 +416,27 @@
       <option name="project" value="LOCAL" />
       <updated>1546827200371</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="BLPHNX29 - General Refactoring">
+      <created>1547061189853</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1547061189853</updated>
+    </task>
+    <task id="LOCAL-00013" summary="BLPHNX29 - Added Member Activity&#10;&#10;-Fixed Last Login to show time elapsed since last login&#10;-Added member activity for 1 day, 1 week, and a month&#10;-edited layout to make the tab look better&#10;-Changed the default minimized size of the stage&#10;-minor refactoring to remove redundant code">
+      <created>1547257903246</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547257903246</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101124000" />
+    <option name="totallyTimeSpent" value="106069000" />
   </component>
-  <component name="TodoView" selected-index="3">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -455,18 +446,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1608" y="360" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983108" visible="true" weight="0.20179948" />
-      <window_info id="Structure" order="1" sideWeight="0.5016892" side_tool="true" weight="0.19616205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49596122" visible="true" weight="0.2238806" />
+      <window_info id="Structure" order="1" sideWeight="0.50403875" side_tool="true" weight="0.2153518" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.5016892" side_tool="true" weight="0.19616205" />
-      <window_info anchor="bottom" id="Duplicates" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32839838" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.31744313" />
@@ -481,13 +470,15 @@
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
       <window_info anchor="bottom" id="REST Client" order="13" weight="0.33044422" />
+      <window_info anchor="bottom" id="Duplicates" order="14" weight="0.32974428" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="15" visible="true" weight="0.32974428" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" visible="true" weight="0.10796915" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.1076759" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
@@ -579,39 +570,11 @@
     <MESSAGE value="BLPHNX28 - Integrated Outfit Member into a Table View&#10;&#10;-Created a new Object OutfitDisplay&#10;-Created specific sorting algorithm's for columns&#10;-Colored Name's based on the outfit's faction&#10;-Fixed Issue where program would freeze up when searching for outfit&#10;-Added feedback so User knows what the program is doing&#10;-Added a message that tell's the user the outfit tag wasn't found" />
     <MESSAGE value="BLPHNX28 - Removed println" />
     <MESSAGE value="BLPHNX29 - Added Most Outfit Information&#10;&#10;-Worked on CSS&#10;-Improved Code&#10;-Added formatting for numbers&#10;-Added Years, months and weeks to time elapsed" />
-    <option name="LAST_COMMIT_MESSAGE" value="BLPHNX29 - Added Most Outfit Information&#10;&#10;-Worked on CSS&#10;-Improved Code&#10;-Added formatting for numbers&#10;-Added Years, months and weeks to time elapsed" />
+    <MESSAGE value="BLPHNX29 - General Refactoring" />
+    <MESSAGE value="BLPHNX29 - Added Member Activity&#10;&#10;-Fixed Last Login to show time elapsed since last login&#10;-Added member activity for 1 day, 1 week, and a month&#10;-edited layout to make the tab look better&#10;-Changed the default minimized size of the stage&#10;-minor refactoring to remove redundant code" />
+    <option name="LAST_COMMIT_MESSAGE" value="BLPHNX29 - Added Member Activity&#10;&#10;-Fixed Last Login to show time elapsed since last login&#10;-Added member activity for 1 day, 1 week, and a month&#10;-edited layout to make the tab look better&#10;-Changed the default minimized size of the stage&#10;-minor refactoring to remove redundant code" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/BluePhoenix.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/MenuBar.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/utilities/Faction.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/services/ItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="56" column="57" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/services/VehicleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/services/PlayerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
@@ -661,19 +624,6 @@
           <folding>
             <element signature="e#1074#1075#0" expanded="true" />
             <element signature="e#1104#1105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/objects/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
-          <folding>
-            <element signature="e#2016#2017#0" expanded="true" />
-            <element signature="e#2058#2059#0" expanded="true" />
-            <element signature="e#5955#5956#0" expanded="true" />
-            <element signature="e#5998#5999#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,16 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="77" column="69" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="127" selection-start-line="127" selection-end-line="127" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -867,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/Styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
@@ -902,57 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/Scene.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/lang_en.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="89" column="22" lean-forward="true" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
-          <folding>
-            <element signature="e#8904#8905#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/ApplicationMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/services/ImageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -960,16 +842,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/TabPaneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/objects/Casualty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="204">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/services/CasualtyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="272">
           <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -977,16 +869,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/Scene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/tabs/KillBoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="280" column="23" lean-forward="true" selection-start-line="280" selection-start-column="23" selection-end-line="280" selection-end-column="23" />
+          <folding>
+            <element signature="e#10388#10389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/objects/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
+          <folding>
+            <element signature="e#6094#6095#0" expanded="true" />
+            <element signature="e#6137#6138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="177" column="11" selection-start-line="177" selection-start-column="11" selection-end-line="177" selection-end-column="11" />
+          <folding>
+            <element signature="e#6844#6845#0" expanded="true" />
+            <element signature="e#6875#6876#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/application/ApplicationMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_192/src.zip!/java/util/concurrent/TimeUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="220" column="16" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+          <folding>
+            <element signature="e#8508#8509#0" expanded="true" />
+            <element signature="e#8555#8556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/PlayerLookup.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/KillBoardTab.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="75" column="83" lean-forward="true" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/Styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="93" column="55" lean-forward="true" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/OutfitLookup.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/OutfitGeneralStatsTab.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="43" column="122" selection-start-line="43" selection-start-column="122" selection-end-line="43" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/bundles/lang_en.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="104" column="19" lean-forward="true" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/application/tabs/OutfitGeneralStatsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="384" column="27" lean-forward="true" selection-start-line="384" selection-start-column="27" selection-end-line="384" selection-end-column="27" />
-          <folding>
-            <element signature="e#16131#17145#0" expanded="true" />
-            <element signature="e#17144#17145#0" expanded="true" />
-            <element signature="e#17480#17845#0" expanded="true" />
-            <element signature="e#17844#17845#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="395">
+          <caret line="258" column="20" selection-start-line="258" selection-start-column="20" selection-end-line="258" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1067,7 +1059,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.google.code.gson:gson:2.3</last-edited>
+          <last-edited>Maven: com.google.code.gson:gson:2.6.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
