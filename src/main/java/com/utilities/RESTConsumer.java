@@ -37,6 +37,7 @@ public class RESTConsumer {
             httpURLConnection.disconnect();
             inputStreamReader.close();
             bufferedReader.close();
+            // crap
             return stringBuilder.toString();
         }
         catch(IOException e){
