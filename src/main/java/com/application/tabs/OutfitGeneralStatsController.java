@@ -121,6 +121,8 @@ public class OutfitGeneralStatsController implements Initializable {
         ((TableColumn) tableView.getColumns().get(8)).setComparator(new doubleCompare());
         ((TableColumn) tableView.getColumns().get(9)).setComparator(new doubleCompare());
         //Sorts the value based on the un formated time played
+        ((TableColumn) tableView.getColumns().get(5)).setComparator(new formatedPlayTimeCompare());
+        //Sorts the value based on the un formated time played
         ((TableColumn) tableView.getColumns().get(6)).setComparator(new formatedPlayTimeCompare());
         //Sorts the values based on rank ordinal instead of ASCII
         ((TableColumn) tableView.getColumns().get(2)).setComparator(new rankCompare());
@@ -201,7 +203,10 @@ public class OutfitGeneralStatsController implements Initializable {
             //Column 6 - LAST LOGIN
             Date lastLogin = new Date(Long.parseLong(member.getPlayer().getPlayerTimes().getLastSaveDate()) * 1000);
             outfitDisplay.setLastLogin(format.format(lastLogin));
-            outfitDisplay.setLastLogin(toStringTimeElapsed((Instant.now().toEpochMilli() / 1000 - Long.parseLong(member.getPlayer().getPlayerTimes().getLastSaveDate()))));
+            long lastLoginEpoch = (Instant.now().toEpochMilli() / 1000 - Long.parseLong(member.getPlayer().getPlayerTimes().getLastSaveDate()));
+            String lastLoginFormatted = toStringTimeElapsed(lastLoginEpoch);
+            outfitDisplay.setLastLogin(lastLoginFormatted);
+            timePlayed.put(lastLoginFormatted, lastLoginEpoch);
             //Column 7 - PLAY TIME
             String playtimeFormated = toStringTimeElapsed(playTime);
             outfitDisplay.setPlayTime(playtimeFormated);
@@ -250,14 +255,22 @@ public class OutfitGeneralStatsController implements Initializable {
 
             activeTotalScore.setText(numberFormat.format(activeTotalScoreValue));
             activeTotalBr.setText(numberFormat.format(activeTotalBrValue));
-            activeAverageBr.setText(numberFormat.format(activeTotalBrValue / amountOfActiveMembers));
-            activeAverageSpm.setText(decimalFormat.format(activeAverageSpmValue / amountOfActiveMembers));
-            activeAverageKpm.setText(decimalFormat.format(activeAverageKpmValue / amountOfActiveMembers));
-            activeAverageKd.setText(decimalFormat.format(activeAverageKdValue / amountOfActiveMembers));
+            if (amountOfActiveMembers == 0) {
+                activeAverageBr.setText("0");
+                activeAverageSpm.setText("0");
+                activeAverageKpm.setText("0");
+                activeAverageKd.setText("0");
+                activeAverageTimePlayedValue = 0;
+            } else {
+                activeAverageBr.setText(numberFormat.format(activeTotalBrValue / amountOfActiveMembers));
+                activeAverageSpm.setText(decimalFormat.format(activeAverageSpmValue / amountOfActiveMembers));
+                activeAverageKpm.setText(decimalFormat.format(activeAverageKpmValue / amountOfActiveMembers));
+                activeAverageKd.setText(decimalFormat.format(activeAverageKdValue / amountOfActiveMembers));
+                activeAverageTimePlayedValue = activeTotalTimePlayedValue / amountOfActiveMembers;
+            }
             activeTotalKills.setText(numberFormat.format(activeTotalKillsValue));
             activeTotalTimePlayed.setText(toStringTimeElapsed(activeTotalTimePlayedValue));
             activeTotalDeaths.setText(numberFormat.format(activeTotalDeathsValue));
-            activeAverageTimePlayedValue = activeTotalTimePlayedValue / amountOfActiveMembers;
             activeAverageTimePlayed.setText(toStringTimeElapsed(activeAverageTimePlayedValue));
 
             lastDay.setText(formatMemberActivityLabel(totalLastDay, outfitDisplayList.size()));
